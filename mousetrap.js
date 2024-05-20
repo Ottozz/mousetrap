@@ -973,6 +973,10 @@
     Mousetrap.prototype.stopCallback = function(e, element) {
         var self = this;
 
+        if (self.paused) {
+            return true;
+        }
+
         // if the element has the class "mousetrap" then no need to stop
         if ((' ' + element.className + ' ').indexOf(' mousetrap ') > -1) {
             return false;
@@ -1018,6 +1022,21 @@
             }
         }
         _REVERSE_MAP = null;
+    };
+
+    /**
+     * adds a pause and unpause method to Mousetrap
+     * this allows you to enable or disable keyboard shortcuts
+     * without having to reset Mousetrap and rebind everything
+     */
+    Mousetrap.prototype.pause = function() {
+        var self = this;
+        self.paused = true;
+    };
+
+    Mousetrap.prototype.unpause = function() {
+        var self = this;
+        self.paused = false;
     };
 
     /**
