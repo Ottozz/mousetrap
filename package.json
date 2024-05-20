@@ -1,5 +1,5 @@
 {
-  "name": "Ottozz/mousetrap",
+  "name": "ottozz/mousetrap",
   "version": "1.6.5",
   "description": "Simple library for handling keyboard shortcuts",
   "main": "mousetrap.js",
